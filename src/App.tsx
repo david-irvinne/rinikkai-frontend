@@ -11,7 +11,7 @@ import Members from "./pages/Members"
 function App() {
 
   return (
-    <div className="min-h-screen flex flex-col p-[0.5rem]">
+    <div className="min-h-screen flex flex-col px-[1.5rem] py-[1rem]">
 
       <Navbar />
 

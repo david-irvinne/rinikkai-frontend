@@ -1,8 +1,9 @@
+import Banner from "../components/home/Banner.tsx";
+
 function Home() {
   return (
     <>
-      <div className="">test Home </div>
-
+      <Banner />
     </>
   );
 }
