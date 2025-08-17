@@ -23,9 +23,11 @@ function App() {
           <Route path="/members" element={<Members/>}/>
         </Routes>
       </div>
+      
+      <div className="mt-[2rem]">
 
-
-      <Footer/>
+        <Footer/>
+      </div>
     </div>
   )
 }
