@@ -17,24 +17,44 @@ const Events = () => {
         <div className=" grid grid-cols-2  gap-x-[1rem] h-full ">
           
           <div className="grid grid-rows-2 gap-y-[1rem] h-full ">
-            <div className="relative bg-red-100 h-full rounded-[12px] overflow-hidden">
+            <div className="relative bg-red-100 h-full rounded-[12px] overflow-hidden group">
               <img 
                 src={MabarKaruta}
                 className="absolute  w-full h-full object-cover" 
                 alt="Mabar Karuta"
               />
+              <div className="absolute bottom-0 text-white ml-[1rem] mb-[1rem]
+                transition-transform duration-300
+                group-hover:-translate-y-[1rem]">
+                <p className="font-bold text-lg">Mabar Karuta</p>
+                <p>Kantin Bio-Geo FMIPA UGM</p>
+              </div>
             </div>
-            <div className="relative bg-red-100 h-full rounded-[12px] overflow-hidden">
+
+            <div className="relative bg-red-100 h-full rounded-[12px] overflow-hidden group">
               <img 
                 src={Shokujikai}
                 className="absolute  w-full h-full object-cover " 
                 alt="Mabar Karuta"
               />
+
+              <div className="absolute bottom-0 text-white ml-[1rem] mb-[1rem]
+                transition-transform duration-300
+                group-hover:-translate-y-[1rem]">
+                <p className="font-bold text-lg">Shokujikai I</p>
+                <p>Kantin Bio-Geo FMIPA UGM</p>
+              </div>
             </div>
           </div>
 
-          <div className=" overflow-hidden rounded-[12px]">
-            <img src={JLPT2025}  className="h-full w-full object-cover "/>
+          <div className="overflow-hidden rounded-[12px] relative group">
+            <img src={JLPT2025}  className="absolute h-full w-full object-cover "/>
+            <div className="absolute bottom-0 text-white ml-[1rem] mb-[1rem]
+              transition-transform duration-300
+              group-hover:-translate-y-[1rem]">
+              <p className="font-bold text-lg">JLPT Juli 2025</p>
+              <p>Lokasi nya apa cik, lupa</p>
+            </div>
           </div>
 
         </div>
