@@ -1,16 +1,25 @@
+import { useNavigate } from "react-router-dom";
+
 import Button from "./Button";
 import JLPT2025 from "../../assets/img/jlpt2025_1.jpeg"
 import MabarKaruta from "../../assets/img/karuta.png"
 import Shokujikai from "../../assets/img/shokujikai1.jpeg"
 
 const Events = () => {
+  const navigate = useNavigate();
+  const handleLihatEvent = () =>{
+    navigate('/events');
+  }
+
   return ( <> 
 
-    <div className="h-[32rem] border-1 rounded-[12px]  px-[1.2rem] bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]"> 
+    <div className="h-[32rem]  rounded-[12px]  px-[1.2rem] bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]"> 
       
-      <div className="py-[1rem]">
+      <div className="py-[1rem]  flex justify-between ">
 
-        <Button title="Events" color="bg-slate-100" />
+        <Button title="Events" color="bg-slate-100" shape="w-[10rem]" text="text-center"/>
+
+        <Button onClick={handleLihatEvent} title="Lihat events lainnya" color="bg-blue-400" shape="w-[15rem] hover:cursor-pointer" text="text-center text-white" />
       </div>
 
       <div className="h-[80%]  ">
