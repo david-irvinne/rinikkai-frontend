@@ -1,14 +1,30 @@
+import CountdownImg from "../../assets/img/countdown.png"
+import {useState, useEffect} from "react"
+
 const Countdown = () => {
+  const [daysLeft, setDaysLeft] = useState(0);
+  
+  const calculateDaysLeft = () =>{
+    const now = new Date();
+    const targetData = new Date("2025-12-07T00:00:00+07:00");
+    const differenceMs = targetData - now;
+    const days = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
+    setDaysLeft(days > 0 ? days : 0);
+  }
+  useEffect(() => {
+    calculateDaysLeft();
+    // update tiap jam
+    const interval = setInterval(calculateDaysLeft, 1000 * 60 * 60)
+
+    return () => clearInterval(interval);
+  })
+
+
   return (
     <> 
-      <div className="bg-slate-100 h-full  border-1 border-black rounded-[12px] w-full  p-[0.5rem] flex items-center justify-center">
-        <div> 
-          <div className="text-center"> 
-            <p className="text-bold"> JLPT まで </p>
-            <p>後 131  日</p>
-            <p className="text-xs"> RINIKKAIの皆さんお互いがんばりましょう! </p>
-          </div>
-        </div>
+      <div className="bg-slate-100 h-full overflow-hidden border-black rounded-[12px] relative">
+        <img src={CountdownImg} className="w-full h-full object-cover"/> 
+        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold">{daysLeft}</p>
       </div>
     </>
   )

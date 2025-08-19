@@ -37,7 +37,7 @@ function FaqItem({ question, answer }: FaqItemProps) {
 export default function FaqSection() {
   const faqs = [
     { question: "who is the cutest shark of all time?", answer: "gawr gura" },
-    { question: "david ganteng gak?", answer: "pake nanya :sunglasses:" },
+    { question: "kata-kata hari ini dong pai", answer: "人の苦労は蜜の味" },
     { question: "gawr?", answer: "goober" },
     { question: "senpai, apa arti 「あなたの顔はちんこみたい」?", answer: "artinya \"have a nice day\" " },
   ];
