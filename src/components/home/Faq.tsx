@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Button from "./Button.tsx"
 
 type FaqItemProps = {
   question: string;
@@ -24,27 +25,27 @@ function FaqItem({ question, answer }: FaqItemProps) {
         />
       </button>
 
-      {open && (
-        <p className="mt-2 text-gray-600 text-sm">{answer}</p>
-      )}
+
+      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-[5rem] mt-[1rem]" : "max-h-0"}`}>
+        <p className="text-gray-600 text-sm">{answer}</p>
+      </div>
+
     </div>
   );
 }
 
 export default function FaqSection() {
   const faqs = [
-    { question: "Question1", answer: "Answer for question 1 goes here." },
-    { question: "Question2", answer: "Answer for question 2 goes here." },
-    { question: "Question3", answer: "Answer for question 3 goes here." },
-    { question: "Question4", answer: "Answer for question 4 goes here." },
+    { question: "who is the cutest shark of all time?", answer: "gawr gura" },
+    { question: "david ganteng gak?", answer: "pake nanya :sunglasses:" },
+    { question: "gawr?", answer: "goober" },
+    { question: "senpai, apa arti 「あなたの顔はちんこみたい」?", answer: "artinya \"have a nice day\" " },
   ];
 
   return (
-    <section className="p-6 bg-gray-50 rounded-xl">
-      <h2 className="text-xl font-bold mb-4 bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3] text-white px-4 py-2 rounded-lg w-fit">
-        FAQ
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section className="py-[1rem] px-[1.2rem] border-1  bg-gray-50 rounded-xl">
+      <Button title="FAQ" color=" bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]" />
+      <div className="mt-[1rem] grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
         {faqs.map((faq, idx) => (
           <FaqItem key={idx} question={faq.question} answer={faq.answer} />
         ))}

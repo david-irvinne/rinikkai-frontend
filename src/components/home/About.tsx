@@ -3,7 +3,7 @@ const About = () => {
 
   return (
   <>
-      <div className="border-1 rounded-[12px] py-[1rem] px-[1.2rem]"> 
+      <div className="border-1 rounded-[12px] py-[1rem] px-[1.2rem] bg-gray-50"> 
 
         <Button title="About Us" color="bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]" />
 
