@@ -19,7 +19,7 @@ const Events = () => {
 
         <Button title="Events" color="bg-slate-100" shape="w-[10rem]" text="text-center"/>
 
-        <Button onClick={handleLihatEvent} title="Lihat events lainnya" color="bg-blue-400" shape="w-[15rem] hover:cursor-pointer" text="text-center text-white" />
+        <Button onClick={handleLihatEvent} title="Lihat events lainnya" color="bg-blue-500" shape="w-[15rem] hover:cursor-pointer" text="text-center text-white" />
       </div>
 
       <div className="h-[80%]  ">
