@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate =useNavigate();
+  const handleLogoClick = () =>{
+    navigate("/");
+  }
   return (
     <div className="flex justify-between items-center bg-slate-600 text-white px-[1rem]
       py-[0.5rem] rounded-lg shadow-xl/40 mx-auto z-10
       bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]">
 
       {/* logo */}
-      <div className="font-bold text-xl mr-[8rem]">rinikkai</div>
+      <div className="font-bold text-xl mr-[8rem] flex items-center hover:cursor-pointer" onClick={handleLogoClick}>
+        <img src="/rinikkai-logo.svg" className="size-[2rem] mr-[0.4rem]"/>
+        rinikkai
+      </div>
 
       {/* Nav links */}
       <div className="flex gap-6 items-center text-sm">
