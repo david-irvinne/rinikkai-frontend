@@ -24,7 +24,7 @@ const Countdown = () => {
     <> 
       <div className="bg-slate-100 h-full overflow-hidden border-black rounded-[12px] relative">
         <img src={CountdownImg} className="w-full h-full object-cover"/> 
-        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl font-semibold">{daysLeft}</p>
+        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-7xl text-slate-800 font-semibold">{daysLeft}</p>
       </div>
     </>
   )
