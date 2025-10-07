@@ -17,7 +17,7 @@ const Countdown = () => {
     const interval = setInterval(calculateDaysLeft, 1000 * 60 * 60)
 
     return () => clearInterval(interval);
-  })
+  }, [])
 
 
   return (
