@@ -62,7 +62,7 @@ const Events = () => {
               transition-transform duration-300
               group-hover:-translate-y-[1rem]">
               <p className="font-bold text-lg">JLPT Juli 2025</p>
-              <p>Lokasi nya apa cik, lupa</p>
+              <p>STMP Yogyakarta</p>
             </div>
           </div>
 

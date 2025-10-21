@@ -12,10 +12,10 @@ const Footer = () => {
         </div>
 
         {/* Bagian kanan */}
-        <div className="flex flex-col space-y-[8rem] text-gray-700 text-right justify-center">
-          <a href="#" className="hover:text-gray-900 text-left">Alamat</a>
-          <a href="#" className="hover:text-gray-900 text-left">Sosial Media</a>
-          <a href="#" className="hover:text-gray-900 text-left">Kontak</a>
+        <div className="flex flex-col space-y-[8rem] text-gray-800 text-right justify-center">
+          <a href="https://www.instagram.com/rinikkai_ugm/" className="hover:text-gray-900 text-left">Alamat</a>
+          <a href="https://www.instagram.com/rinikkai_ugm/" className="hover:text-gray-900 text-left">Sosial Media</a>
+          <a href="https://www.instagram.com/rinikkai_ugm/" className="hover:text-gray-900 text-left">Kontak</a>
         </div>
       </div>
     </footer>

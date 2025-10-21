@@ -16,7 +16,7 @@ const Events = () => {
       <div className="h-[64rem]  rounded-[12px]  ">
         <div className="py-[1rem]  flex justify-between ">
           <Button
-            title=" <- Home"
+            title="Home"
             color="text-white bg-blue-500"
             shape="w-[10rem] hover:cursor-pointer"
             text="text-center"

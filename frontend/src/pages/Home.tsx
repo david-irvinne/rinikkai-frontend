@@ -7,12 +7,12 @@ import Members from "../components/home/Members.tsx";
 function Home() {
   return (
     <>
-      <div className="flex flex-col gap-y-[2rem]">
-      <Banner />
-      <About />
-      <Events />
-      <Members />
-      <FaqSection />
+      <div className="flex flex-col gap-y-[2rem] pt-[1.8rem]">
+        <Banner />
+        <About />
+        <Events />
+        <Members />
+        <FaqSection />
       </div>
     </>
   );

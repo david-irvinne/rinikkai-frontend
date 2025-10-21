@@ -7,7 +7,7 @@ const Navbar = () => {
     navigate("/");
   }
   return (
-    <div className="flex justify-between items-center bg-slate-600 text-white px-[1rem]
+    <div className="fixed top-0 left-1/2 -translate-x-1/2 mt-[0.8rem] flex justify-between items-center bg-slate-600 text-white px-[1rem]
       py-[0.5rem] rounded-lg shadow-xl/40 mx-auto z-10
       bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]">
 
