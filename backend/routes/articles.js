@@ -12,12 +12,16 @@ router.get("/new", (req, res) => {
 })
 
 router.get('/:slug', async (req, res) =>{
-  const article = await Article.findOne({slug: req.params.slug});
-  if(article == null) res.redirect('/');
-  // console.log(article.title);
-  // console.log(article.description);
-  // console.log(article.markdown);
-  res.render('articles/show', {article: article});
+  try {
+    const article = await Article.findOne({slug: req.params.slug});
+    if(!article) return res.status(404).json({"message":"not found"});
+    // res.render('articles/show', {article: article});
+    return res.status(200).json({"article": article});
+
+  } catch (error) {
+    console.log("error in get slug", error);
+    return res.status(500).json({error: error})    
+  }
 })
 
 router.get("/edit/:id", async (req, res) => {

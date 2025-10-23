@@ -1,5 +1,6 @@
 import express from "express"
 import dotenv from "dotenv";
+import cors from "cors";
 import methodOverride from "method-override";
 import {connectDB} from "./lib/db.js";
 import articleRouter from "./routes/articles.js";
@@ -9,6 +10,11 @@ import Article from "./models/article.js";
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "http://localhost:5173";
+
+app.use(cors({
+    origin: allowedOrigin,
+}));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: false}));

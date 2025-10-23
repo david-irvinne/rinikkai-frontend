@@ -7,8 +7,10 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Events from "./pages/Events"
 import Members from "./pages/Members"
+import ShowArticle from "./pages/ShowArticle";
 
 function App() {
+  console.log(import.meta.env.CORS_URL);
 
   return (
     <div className="min-h-screen flex flex-col px-[1.5rem] py-[1rem]">
@@ -21,6 +23,7 @@ function App() {
           <Route path="/events" element={<Events/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/members" element={<Members/>}/>
+          <Route path="/showArticle" element={<ShowArticle/>}/> 
         </Routes>
       </div>
       
