@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 interface Article {
   _id: string;
@@ -14,9 +15,10 @@ export default function ShowArticle() {
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const {slug} = useParams<{slug: string}>();
 
   useEffect(() => {
-    fetch("http://localhost:5000/articles/jlpt-juli-2025")
+    fetch(`http://localhost:5000/articles/${slug}`)
       .then((res) => {
         if (!res.ok) throw new Error("Gagal memuat artikel");
         return res.json();

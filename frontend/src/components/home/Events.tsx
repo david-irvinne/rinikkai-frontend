@@ -10,11 +10,15 @@ const Events = () => {
   const handleLihatEvent = () =>{
     navigate('/events');
   }
+  const handleEventClick = (slug: string) =>{
+    navigate(`/showArticle/${slug}`);
+  }
+
 
   return ( <> 
 
     <div className="h-[32rem]  rounded-[12px]  px-[1.2rem] bg-gradient-to-r from-[#4E87CE] to-[#F1F2F3]"> 
-      
+
       <div className="py-[1rem]  flex justify-between ">
 
         <Button title="Events" color="bg-slate-100" shape="w-[10rem]" text="text-center"/>
@@ -24,7 +28,7 @@ const Events = () => {
 
       <div className="h-[80%]  ">
         <div className=" grid grid-cols-2  gap-x-[1rem] h-full ">
-          
+
           <div className="grid grid-rows-2 gap-y-[1rem] h-full ">
             <div className="relative bg-red-100 h-full rounded-[12px] overflow-hidden group">
               <img 
@@ -56,11 +60,14 @@ const Events = () => {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-[12px] relative group">
+          <div className="overflow-hidden rounded-[12px] relative group cursor-pointer"
+                          onClick={() => handleEventClick("jlpt-juli-2025")}
+          >
             <img src={JLPT2025}  className="absolute h-full w-full object-cover "/>
             <div className="absolute bottom-0 text-white ml-[1rem] mb-[1rem]
               transition-transform duration-300
-              group-hover:-translate-y-[1rem]">
+              group-hover:-translate-y-[1rem] " 
+            >
               <p className="font-bold text-lg">JLPT Juli 2025</p>
               <p>STMP Yogyakarta</p>
             </div>

@@ -11,6 +11,10 @@ const Events = () => {
   const handleBackHome = () =>{
     navigate('/');
   }
+
+  const handleEventClick = (slug: string) =>{
+    navigate(`/showArticle/${slug}`);
+  }
   return (
     <>
       <div className="h-[64rem]  rounded-[12px]  ">
@@ -67,7 +71,9 @@ const Events = () => {
             </div>
 
             <div className="grid grid-rows-[3fr_2fr] gap-y-[1rem] h-full ">
-              <div className="overflow-hidden rounded-[12px] relative group">
+              <div className="overflow-hidden rounded-[12px] relative group cursor-pointer"
+                  onClick={() => handleEventClick("jlpt-juli-2025")}
+              >
                 <img
                   src={JLPT2025}
                   className="absolute h-full w-full object-cover "
@@ -78,10 +84,12 @@ const Events = () => {
                 group-hover:-translate-y-[1rem]"
                 >
                   <p className="font-bold text-lg">JLPT Juli 2025</p>
-                  <p>Lokasi nya apa cik, lupa</p>
+                  <p>SMTP Yogyakarta</p>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-[12px] relative group">
+              <div className="overflow-hidden rounded-[12px] relative group cursor-pointer"
+                onClick={() => handleEventClick("jlpt-desember-2024")}
+              >
                 <img
                   src={JLPT2024}
                   className="absolute h-full w-full object-cover "
