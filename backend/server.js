@@ -27,22 +27,22 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 
-
 app.use("/articles", articleRouter);
 
-// Serve frontend build (React)
-const frontendPath = path.join(__dirname, "../frontend/dist");
-app.use(express.static(frontendPath));
-
-app.get('/', async (req, res) => {  
-  const articles = await Article.find().sort({createdAt: 'desc'}); 
-  res.render('articles/index', {articles: articles});
-})
+// app.get('/', async (req, res) => {  
+//   const articles = await Article.find().sort({createdAt: 'desc'}); 
+//   res.render('articles/index', {articles: articles});
+// })
 
 // Fallback: semua route non-API diarahkan ke React index.html
-app.use((req, res) => {
-  res.sendFile(path.join(frontendPath, "index.html"));
-});
+if(process.env.NODE_ENV === "production"){
+  // Serve frontend build (React)
+  const frontendPath = path.join(__dirname, "../frontend/dist");
+  app.use(express.static(frontendPath));
+  app.use((req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+  });
+}
 
 app.listen(PORT, () => {
   console.log("server is running on port", PORT);
