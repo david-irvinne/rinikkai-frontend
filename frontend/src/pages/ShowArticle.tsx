@@ -18,7 +18,7 @@ export default function ShowArticle() {
   const {slug} = useParams<{slug: string}>();
   // console.log(`VITE_CORS_URL: ${import.meta.env.VITE_CORS_URL}/${slug}`);
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_CORS_URL}/articles/${slug}`)
+    fetch(`/articles/${slug}`)
       .then((res) => {
         if (!res.ok) throw new Error("Gagal memuat artikel");
         return res.json();
